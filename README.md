@@ -1,0 +1,1 @@
+Xml Schema for data specification and validation. The specified data is used for storing assessment units as file.
