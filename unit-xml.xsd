@@ -157,6 +157,16 @@
 
                 <xs:element ref="DefinitionElement" />
 
+                <xs:element name="UnitCommentsRef" minOccurs="0">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="lastChange" type="xs:dateTime" />
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+
                 <xs:element name="CodingSchemeRef" minOccurs="0">
                     <xs:complexType>
                         <xs:simpleContent>
