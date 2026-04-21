@@ -160,9 +160,7 @@
                 <xs:element name="UnitCommentsRef" minOccurs="0">
                     <xs:complexType>
                         <xs:simpleContent>
-                            <xs:extension base="xs:string">
-                                <xs:attribute name="lastChange" type="xs:dateTime" />
-                            </xs:extension>
+                            <xs:extension base="xs:string"/>
                         </xs:simpleContent>
                     </xs:complexType>
                 </xs:element>
@@ -175,6 +173,14 @@
                                 <xs:attribute name="schemeType" type="xs:string" />
                                 <xs:attribute name="lastChange" type="xs:dateTime" />
                             </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="UnitRichNotesRef" minOccurs="0">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string"/>
                         </xs:simpleContent>
                     </xs:complexType>
                 </xs:element>
