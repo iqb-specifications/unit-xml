@@ -42,8 +42,17 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:simpleType name="VariableTypeValue">
+    <xs:simpleType name="VariableTypeValueExplicit">
         <xs:restriction base="xs:string">
+            <xs:enumeration value="STRING" />
+            <xs:enumeration value="INTEGER" />
+            <xs:enumeration value="NUMBER" />
+            <xs:enumeration value="BOOLEAN" />
+            <xs:enumeration value="ATTACHMENT" />
+            <xs:enumeration value="JSON" />
+            <xs:enumeration value="NO_VALUE" /> 
+            <xs:enumeration value="CODED" />
+            <!-- Falls die alten Kleinbuchstaben auch in der Explicit-Liste stehen sollen: -->
             <xs:enumeration value="string" />
             <xs:enumeration value="integer" />
             <xs:enumeration value="number" />
@@ -54,20 +63,38 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:simpleType name="VariableTypeValueOther">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9_\-]*" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="VariableTypeValue">
+        <xs:union memberTypes="VariableTypeValueOther VariableTypeValueExplicit" />
+    </xs:simpleType>
+
     <xs:simpleType name="VariableFormatValueExplicit">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="text-selection" />
-            <xs:enumeration value="image" />
-            <xs:enumeration value="capture-image" />
-            <xs:enumeration value="audio" />
-            <xs:enumeration value="ggb-file" />
-            <xs:enumeration value="non-negative" />
+            <xs:enumeration value="TEXT_SELECTION" />
+            <xs:enumeration value="IMAGE" />
+            <xs:enumeration value="CAPTURE_IMAGE" />
+            <xs:enumeration value="AUDIO" />
+            <xs:enumeration value="GGB_FILE" />
+            <xs:enumeration value="GGB_VARIABLE" />
+            <xs:enumeration value="LATEX" />
+            <xs:enumeration value="MATH_ML" />
+            <xs:enumeration value="MATH_TABLE" />
+            <xs:enumeration value="MATH_TEXT_MIX" />
+            <xs:enumeration value="CHEM_ELEMENT_SYMBOLS" />
+            <xs:enumeration value="CHEM_MOLECULE" />
+            <xs:enumeration value="NON_NEGATIVE" />
+            <xs:enumeration value="" />
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="VariableFormatValueOther">
         <xs:restriction base="xs:string">
-            <xs:pattern value="[a-z\d-]*" />
+            <xs:pattern value="[a-zA-Z\d_-]*" />
         </xs:restriction>
     </xs:simpleType>
 

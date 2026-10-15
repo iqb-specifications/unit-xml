@@ -2,11 +2,8 @@
 
 You find here the XML-Schema for Unit-Index.
 
-This data structure is deprecated. See new unit-index [here](https://github.com/iqb-specifications/unit-index/)!
+A unit can also be represented in JSON. Its components are specified separately:
 
-
-Read more:
-
-* [All interface specifications of Verona](https://verona-interfaces.github.io/) (German only)
-* [All specifications of IQB](https://iqb-specifications.github.io/) (German only)
-* [Learn about TBA](https://iqb-berlin.github.io/tba-info/) (German only)
+* [unit-index](https://iqb-specifications.github.io/unit-index/)
+* [unit-items](https://iqb-specifications.github.io/unit-items/)
+* [variablen-info](https://iqb-specifications.github.io/variable-info/)
